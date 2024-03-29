@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package user;
+
+import "commons.proto";
+
+
+service UserServices {
+  rpc FindOneUser(GetUserRequest) returns (User) {}
+  rpc FindAllUsers(commons.Empty) returns (UserList) {}
+  rpc QueryUsers(stream commons.QueryPagination) returns (stream UserList) {}
+}
+
+message User {
+  string id = 1;
+  string name = 2;
+  string email = 3;
+  string password = 4;
+  string createdAt = 5;
+  string updatedAt = 6;
+}
+
+message UserList {
+  repeated User users = 1;
+}
+
+message GetUserRequest {
+  string id = 1;
+}

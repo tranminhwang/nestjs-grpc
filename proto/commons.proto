@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package commons;
+
+
+message Empty {}
+
+message QueryPagination {
+    int32 page = 1;
+    int32 limit = 2;
+  }
