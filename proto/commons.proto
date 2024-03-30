@@ -5,7 +5,15 @@ package commons;
 
 message Empty {}
 
-message QueryPagination {
-    int32 page = 1;
-    int32 limit = 2;
-  }
+message RequestQuery {
+  string q = 1;
+  string select = 2;
+}
+
+message RequestPaginationQuery {
+  string q = 1;
+  string select = 2;
+  string orderBy = 3;
+  int32 page = 4;
+  int32 limit = 5;
+}

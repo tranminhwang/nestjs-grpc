@@ -6,9 +6,9 @@ import "commons.proto";
 
 
 service UserServices {
-  rpc FindOneUser(GetUserRequest) returns (User) {}
-  rpc FindAllUsers(commons.Empty) returns (UserList) {}
-  rpc QueryUsers(stream commons.QueryPagination) returns (stream UserList) {}
+  rpc FindOneUser(commons.RequestQuery) returns (User) {}
+  rpc FindAllUsers(commons.RequestPaginationQuery) returns (UserList) {}
+  rpc QueryUsers(stream commons.RequestPaginationQuery) returns (stream UserList) {}
 }
 
 message User {
@@ -21,9 +21,5 @@ message User {
 }
 
 message UserList {
-  repeated User users = 1;
-}
-
-message GetUserRequest {
-  string id = 1;
+  repeated User data = 1;
 }

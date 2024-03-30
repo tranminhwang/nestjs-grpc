@@ -3,7 +3,7 @@ import { EnvModule, UtilsModule } from '@app/common';
 import { DatabaseModule } from '@app/database';
 import { UserController } from './user.controller';
 import { UserServicesImpl } from './user.service';
-import { User } from './entities';
+import { UserEntity } from './entities';
 
 @Module({
   imports: [EnvModule, DatabaseModule, UtilsModule],
@@ -11,7 +11,7 @@ import { User } from './entities';
   providers: [
     {
       provide: 'UserRepository',
-      useValue: User,
+      useValue: UserEntity,
     },
     {
       provide: 'UserServices',

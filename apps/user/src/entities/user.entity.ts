@@ -1,4 +1,5 @@
 import { Column, Model, Table, DataType } from 'sequelize-typescript';
+import { User } from '@app/common/types/user';
 
 @Table({
   modelName: 'user',
@@ -7,7 +8,7 @@ import { Column, Model, Table, DataType } from 'sequelize-typescript';
   timestamps: true,
   version: true,
 })
-export class User extends Model<User> {
+export class UserEntity extends Model<User> {
   @Column({
     primaryKey: true,
     type: DataType.UUID,

@@ -1,6 +1,6 @@
 import { EnvServices } from '@app/common/configs/env.service';
 import { Provider } from '@nestjs/common';
-import { User } from 'apps/user/src/entities';
+import { UserEntity } from 'apps/user/src/entities';
 import { Sequelize } from 'sequelize-typescript';
 
 export const PostgresProvider: Provider = {
@@ -20,7 +20,7 @@ export const PostgresProvider: Provider = {
         },
       },
     );
-    db.addModels([User]);
+    db.addModels([UserEntity]);
     await db.sync();
 
     return db;

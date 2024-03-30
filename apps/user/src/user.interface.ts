@@ -1,8 +1,8 @@
-import { Query, QueryAndCount } from '@app/common';
-import { User } from './entities/user.entity';
+import { Query, QueryPagination } from '@app/common';
+import { User } from '@app/common/types/user';
 
 export interface UserServices {
-  findAll(query?: Query): Promise<QueryAndCount<User>>;
+  findAll(query?: QueryPagination): Promise<Array<User>>;
   findOne(query: Query): Promise<User>;
   create(user: User): Promise<User>;
   update(user: User): Promise<User>;
